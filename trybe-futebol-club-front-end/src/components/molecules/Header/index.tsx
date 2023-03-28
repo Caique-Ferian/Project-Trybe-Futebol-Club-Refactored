@@ -8,8 +8,10 @@ import { exitToAppImg, negativeLogo } from '@images/';
 import Title from '@atoms/Title';
 
 
-const Header: React.FC<HeaderProps> = 
-  ({ content, FirstNavigationLink }:HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({
+  content,
+  FirstNavigationLink,
+}:HeaderProps) => {
   return(
     <header className="common-header">
       <Container className="image-content">

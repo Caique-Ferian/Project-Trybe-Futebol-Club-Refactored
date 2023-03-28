@@ -2,7 +2,7 @@ import React from "react";
 import ImageProps from "./types";
 
 
-const Image: React.FC<ImageProps> = ({src,alt}:ImageProps) => {
+const Image: React.FC<ImageProps> = ({ src,alt }:ImageProps) => {
   return(<img src={src} alt={alt}/>);
 };
 
