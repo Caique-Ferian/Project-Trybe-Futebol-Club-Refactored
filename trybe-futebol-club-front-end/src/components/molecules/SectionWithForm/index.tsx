@@ -1,8 +1,10 @@
+import React, { useContext } from "react";
 import { FormInfos } from "@atoms/Input/types";
 import Section from "@atoms/Section";
-import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import SectionWithFormProps from "./types";
+import { AppContext } from "@context/index";
+import AppContextType from "@context/types";
 
 
 const SectionWithForm: React.FC<SectionWithFormProps> = ({
@@ -10,8 +12,9 @@ const SectionWithForm: React.FC<SectionWithFormProps> = ({
   children,
 }) => {
   const formHook = useForm<FormInfos>();
+  const { setUser } = useContext(AppContext) as AppContextType;
   const onSubmit: SubmitHandler<FormInfos> = async (data) => {
-    console.log(data);
+    setUser(data);
   }
   return(
     <Section className={className}>
