@@ -1,10 +1,9 @@
-import Header from "@molecules/Header";
 import React from "react";
-import AddNewMatchButton from '@molecules/AddNewMatchButton';
-
+import LoginForm from "@organisms/LoginForm";
+import "@styles/pages/login.css"
 
 const LoginPage: React.FC = () => {
-  return(<Header content="LOGIN" FirstNavigationLink={AddNewMatchButton}/>)
+  return(<LoginForm/>);
 }
 
 export default LoginPage;

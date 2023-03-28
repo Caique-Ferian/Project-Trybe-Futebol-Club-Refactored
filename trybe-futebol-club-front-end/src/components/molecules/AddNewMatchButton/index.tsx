@@ -8,7 +8,7 @@ const AddNewMatchButton: React.FC<AddNewMatchButtonProps> = ({
 }:AddNewMatchButtonProps) => {
   return(
     <Container className="add-new-game-button">
-      <Link to={to}> + Adicionar nova partida </Link>
+      <Link to={to}> Adicionar nova partida </Link>
     </Container>
   );
 };
