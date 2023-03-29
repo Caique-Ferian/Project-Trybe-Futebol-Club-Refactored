@@ -8,6 +8,7 @@ export interface User {
 type AppContextType = {
   user: User;
   failedTryLogin: boolean;
+  isLogged: boolean;
   login: Function;
 }
 

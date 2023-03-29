@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Container from "@atoms/Container";
 import Header from "@molecules/Header";
-import AddNewMatchButton from '@molecules/AddNewMatchButton';
 import SectionWithForm from "@molecules/SectionWithForm";
 import Title from "@atoms/Title";
 import UserInput from "@molecules/UserInput";
@@ -15,7 +14,14 @@ const LoginForm: React.FC = () => {
   const { failedTryLogin } = useContext(AppContext) as AppContextType;
   return(
     <Container className="login-form">
-      <Header content="LOGIN" FirstNavigationLink={ AddNewMatchButton }/>
+      <Header content="LOGIN"
+        classNameFirstButton="leaderboard-button"
+        toFirstButton="/leaderboard"
+        contentFirstButton="Classificação"
+        classNameSecondButton="matches-button"
+        toSecondButton="/matches"
+        contentSecondButton="Partidas"
+      />
       <SectionWithForm className="user-login-area">
         <Title content="Área do usuário"/>
         <UserInput

@@ -1,6 +1,10 @@
-import AddNewMatchButtonProps from "@molecules/AddNewMatchButton/types";
 
 export default interface HeaderProps {
   content: string;
-  FirstNavigationLink: React.FC<AddNewMatchButtonProps>;
+  classNameFirstButton: string;
+  contentFirstButton: string;
+  toFirstButton: string;
+  classNameSecondButton: string;
+  contentSecondButton: string;
+  toSecondButton: string;
 }
