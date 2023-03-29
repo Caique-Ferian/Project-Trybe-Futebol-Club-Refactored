@@ -14,7 +14,8 @@ const LoginForm: React.FC = () => {
   const { failedTryLogin } = useContext(AppContext) as AppContextType;
   return(
     <Container className="login-form">
-      <Header content="LOGIN"
+      <Header
+        content="LOGIN"
         classNameFirstButton="leaderboard-button"
         toFirstButton="/leaderboard"
         contentFirstButton="Classificação"
