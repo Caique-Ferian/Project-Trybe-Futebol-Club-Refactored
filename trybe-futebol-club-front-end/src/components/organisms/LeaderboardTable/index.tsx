@@ -6,12 +6,11 @@ import FilterOptions from "@molecules/FIlterOptions";
 import { AppContext } from '@context/index';
 import AppContextType from "@context/types";
 import Button from "@atoms/Button";
-
+import { types, headers, classNames } from "./constants";
+import SectionWithTable from "@molecules/SectionWithTable";
 
 const LeaderboardTable: React.FC = () => {
   const { currentLBFilter } = useContext(AppContext) as AppContextType;
-  const types = ["Classificação Geral",
-    "Classificação Mandantes", "Classificação Visitantes"];
   return(
     <Container className="leaderboard-table">
       <Header
@@ -36,6 +35,12 @@ const LeaderboardTable: React.FC = () => {
         />
         <Button type="submit">Buscar</Button>
       </SectionWithForm>
+      <SectionWithTable 
+        sectionClassName="score-board-table-section"
+        tableClassName="score-board-table"
+        headers={headers}
+        classNames={classNames}
+      />
     </Container>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import '@styles/pages/leaderboard.css';
+import '@styles/components/leaderboardTable.css';
 import LeaderboardTable from "@organisms/LeaderboardTable";
 
 
