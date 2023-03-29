@@ -12,10 +12,14 @@ import { positiveLogo } from "@images/";
 const SectionWithForm: React.FC<SectionWithFormProps> = ({
   className,
   children,
+  hasImage,
 }) => {
   const formHook = useForm<FormInfos>();
-  const { login } = useContext(AppContext) as AppContextType;
-  const onSubmit: SubmitHandler<FormInfos> = async (data) => login(data)
+  const { login, setCurrentLBFilter } = useContext(AppContext) as AppContextType;
+  const onSubmit: SubmitHandler<FormInfos> = async (data) => {
+    if(data.email) login(data);
+    if(data.filter) setCurrentLBFilter(data.filter);
+  }
   const childrenWithProps = React.Children.map(children,(child) => {
     if(React.isValidElement(child)) {
       return React
@@ -25,7 +29,9 @@ const SectionWithForm: React.FC<SectionWithFormProps> = ({
   });
   return(
     <Section className={className}>
-      <Image src={ positiveLogo } alt="Trybe Futebol Clube Negative Logo"/>
+      {hasImage && (
+        <Image src={ positiveLogo } alt="Trybe Futebol Clube Negative Logo"/>
+      )}
       <form onSubmit={formHook.handleSubmit(onSubmit)}>
         {childrenWithProps}
       </form>

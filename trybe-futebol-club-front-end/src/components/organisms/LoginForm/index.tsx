@@ -17,13 +17,13 @@ const LoginForm: React.FC = () => {
       <Header
         content="LOGIN"
         classNameFirstButton="leaderboard-button"
-        toFirstButton="/leaderboard"
+        toFirstButton="/"
         contentFirstButton="Classificação"
         classNameSecondButton="matches-button"
         toSecondButton="/matches"
         contentSecondButton="Partidas"
       />
-      <SectionWithForm className="user-login-area">
+      <SectionWithForm className="user-login-area" hasImage={true}>
         <Title content="Área do usuário"/>
         <UserInput
           type="text"

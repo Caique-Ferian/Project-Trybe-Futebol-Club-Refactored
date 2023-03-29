@@ -13,4 +13,5 @@ export interface PropsInput {
 export interface FormInfos {
   email:string;
   password:string;
+  filter: string;
 }

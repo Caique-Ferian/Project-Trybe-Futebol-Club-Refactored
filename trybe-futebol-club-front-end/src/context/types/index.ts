@@ -1,4 +1,4 @@
-// import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 export interface User {
   email: string;
@@ -10,6 +10,8 @@ type AppContextType = {
   failedTryLogin: boolean;
   isLogged: boolean;
   login: Function;
+  currentLBFilter: string;
+  setCurrentLBFilter: Dispatch<SetStateAction<string>>;
 }
 
 export default AppContextType;
