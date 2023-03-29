@@ -14,11 +14,8 @@ const SectionWithForm: React.FC<SectionWithFormProps> = ({
   children,
 }) => {
   const formHook = useForm<FormInfos>();
-  const { setUser } = useContext(AppContext) as AppContextType;
-  const onSubmit: SubmitHandler<FormInfos> = async (data) => {
-    console.log(data);
-    setUser(data);
-  }
+  const { login } = useContext(AppContext) as AppContextType;
+  const onSubmit: SubmitHandler<FormInfos> = async (data) => login(data)
   const childrenWithProps = React.Children.map(children,(child) => {
     if(React.isValidElement(child)) {
       return React

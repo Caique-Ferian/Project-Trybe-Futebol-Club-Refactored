@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+// import { Dispatch, SetStateAction } from "react";
 
 export interface User {
   email: string;
@@ -7,7 +7,8 @@ export interface User {
 
 type AppContextType = {
   user: User;
-  setUser: Dispatch<SetStateAction<User>>;
+  failedTryLogin: boolean;
+  login: Function;
 }
 
 export default AppContextType;

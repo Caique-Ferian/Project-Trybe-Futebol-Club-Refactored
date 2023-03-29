@@ -1,14 +1,18 @@
+import React, { useContext } from "react";
 import Container from "@atoms/Container";
 import Header from "@molecules/Header";
-import React from "react";
 import AddNewMatchButton from '@molecules/AddNewMatchButton';
 import SectionWithForm from "@molecules/SectionWithForm";
 import Title from "@atoms/Title";
 import UserInput from "@molecules/UserInput";
 import Button from "@atoms/Button";
+import { AppContext } from '@context/index';
+import AppContextType from "@context/types";
+import Paragraph from "@atoms/Paragraph";
 
 
 const LoginForm: React.FC = () => {
+  const { failedTryLogin } = useContext(AppContext) as AppContextType;
   return(
     <Container className="login-form">
       <Header content="LOGIN" FirstNavigationLink={ AddNewMatchButton }/>
@@ -28,6 +32,8 @@ const LoginForm: React.FC = () => {
           placeholder="Senha"
           formRegister="password"
         />
+        {failedTryLogin && <Paragraph content={`O endereço de e-mail ou a 
+        senha não estão corretos. Por favor, tente novamente.`}/> }
         <Button type="submit">Entrar</Button>
       </SectionWithForm>
     </Container>
