@@ -10,6 +10,8 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [isLogged,setIsLogged] = useState<boolean>(false);
   const [currentLBFilter,
     setCurrentLBFilter] = useState<string>('Classificação Geral');
+    const [currentMatchesFilter,
+      setCurrentMatchesFilter] = useState<string>('Todos os Jogos');
   const navigate = useNavigate();
   const login = (data: FormInfos) => {
     if(!data.email || !data.password) setFailedTryLogin(true);
@@ -23,7 +25,8 @@ const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   return(
     <AppContext.Provider value={
       { user, failedTryLogin, isLogged, login,
-        currentLBFilter, setCurrentLBFilter }}>
+        currentLBFilter, setCurrentLBFilter,
+        currentMatchesFilter ,setCurrentMatchesFilter, }}>
       {children}
     </AppContext.Provider>
   );

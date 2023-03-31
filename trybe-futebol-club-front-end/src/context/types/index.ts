@@ -12,6 +12,9 @@ type AppContextType = {
   login: Function;
   currentLBFilter: string;
   setCurrentLBFilter: Dispatch<SetStateAction<string>>;
+  currentMatchesFilter: string;
+  setCurrentMatchesFilter: Dispatch<SetStateAction<string>>;
+
 }
 
 export default AppContextType;

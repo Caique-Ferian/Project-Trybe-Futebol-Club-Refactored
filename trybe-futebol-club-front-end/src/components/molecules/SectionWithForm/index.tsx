@@ -15,10 +15,12 @@ const SectionWithForm: React.FC<SectionWithFormProps> = ({
   hasImage,
 }) => {
   const formHook = useForm<FormInfos>();
-  const { login, setCurrentLBFilter } = useContext(AppContext) as AppContextType;
+  const { login, setCurrentLBFilter,
+    setCurrentMatchesFilter } = useContext(AppContext) as AppContextType;
   const onSubmit: SubmitHandler<FormInfos> = async (data) => {
     if(data.email) login(data);
-    if(data.filter) setCurrentLBFilter(data.filter);
+    if(data.filterLb) setCurrentLBFilter(data.filterLb);
+    if(data.filterMatches) setCurrentMatchesFilter(data.filterMatches);
   }
   const childrenWithProps = React.Children.map(children,(child) => {
     if(React.isValidElement(child)) {

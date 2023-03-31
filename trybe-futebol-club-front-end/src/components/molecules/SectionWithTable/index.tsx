@@ -6,6 +6,7 @@ import SectionWithTableProps from "./types";
 const SectionWithTable: React.FC<SectionWithTableProps> = ({
   sectionClassName,
   tableClassName,
+  headersClassNames,
   headers,
   classNames,
 }:SectionWithTableProps) => {
@@ -14,12 +15,20 @@ const SectionWithTable: React.FC<SectionWithTableProps> = ({
       <table className={tableClassName}>
         <thead>
           <tr>
-            {headers.map((header,i) =><th key={i}>{header}</th>)}
+            {headers.map((header,i) =>(
+              <th
+              key={i}
+              className={headersClassNames[i]}
+            >
+              {header}
+            </th>))}
           </tr>
         </thead>
         <tbody>
-          {classNames.map((e,i) => (
-            <tr key={i}><td className={e}>{e}</td> </tr>))}
+          {headers.map((_,i) => (
+            <tr key={i}>{classNames.map((e,i) => (
+            <td className={e}>{e.includes("versus") ? "X" :i}</td>
+            ))}</tr>))}
         </tbody>
       </table>
     </Section>

@@ -1,50 +1,51 @@
 import React, { useContext } from "react";
-import Container from "@atoms/Container";
+import Container from '@atoms/Container';
 import Header from "@molecules/Header";
 import SectionWithForm from "@molecules/SectionWithForm";
 import FilterOptions from "@molecules/FIlterOptions";
+import { types,headers,classNames, headersClassNames } from "./constants";
 import { AppContext } from '@context/index';
 import AppContextType from "@context/types";
-import Button from "@atoms/Button";
-import { types, headers, classNames } from "./constants";
+import Button from '@atoms/Button';
 import SectionWithTable from "@molecules/SectionWithTable";
 
-const LeaderboardTable: React.FC = () => {
-  const { currentLBFilter } = useContext(AppContext) as AppContextType;
+const GameTable: React.FC = () => {
+  const { currentMatchesFilter } = useContext(AppContext) as AppContextType;
   return(
-    <Container className="leaderboard-table">
+    <Container className="game-table">
       <Header
-        content="CLASSIFICAÇÃO"
-        classNameFirstButton="matches-button"
-        toFirstButton="/matches"
-        contentFirstButton="Partidas"
+        content="PARTIDAS"
+        classNameFirstButton="leaderboard-button"
+        toFirstButton="/"
+        contentFirstButton="Classificação"
         classNameSecondButton="login-button"
         toSecondButton="/login"
         contentSecondButton="Login"
       />
-      <SectionWithForm 
-        className="classification-handlers score-board-table-section"
+      <SectionWithForm
+        className="games-section games-handlers"
         hasImage={false}
       >
         <FilterOptions
           types={types}
-          currentFilter={currentLBFilter}
-          htmlFor="classification-filter"
+          currentFilter={currentMatchesFilter}
+          htmlFor="game-filter"
           content="Partidas:"
-          formRegister="filterLb"
+          formRegister="filterMatches"
         />
         <Button type="submit">Buscar</Button>
       </SectionWithForm>
-      <SectionWithTable 
-        sectionClassName="score-board-table-section"
+      <SectionWithTable
+        sectionClassName="games-table"
         tableClassName="score-board-table"
-        headersClassNames={headers}
+        headersClassNames={headersClassNames}
         headers={headers}
         classNames={classNames}
+        
       />
     </Container>
   );
 }
 
 
-export default LeaderboardTable;
+export default GameTable;
