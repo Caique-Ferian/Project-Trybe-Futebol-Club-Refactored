@@ -5,16 +5,18 @@ import UserInputProps from "./types";
 import { Replace } from "@utils/replace";
 
 
-const UserInput: React.FC<Replace<UserInputProps,{id?:string}>> = ({
+const UserInput: React.FC<Replace<UserInputProps,{id?:string, content?:string}>> = ({
   type,
   className,
   placeholder,
   formHook,
   formRegister,
   htmlFor,
-}:Replace<UserInputProps,{id?:string}>) => {
+  content,
+}:Replace<UserInputProps,{id?:string, content?:string}>) => {
   return(
   <Label htmlFor={htmlFor}>
+    {content ?? null}
     <Input
       type={type}
       className={className}

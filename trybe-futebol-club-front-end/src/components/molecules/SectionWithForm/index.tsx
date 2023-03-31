@@ -11,6 +11,7 @@ import { positiveLogo } from "@images/";
 
 const SectionWithForm: React.FC<SectionWithFormProps> = ({
   className,
+  classNameForm,
   children,
   hasImage,
 }) => {
@@ -34,7 +35,7 @@ const SectionWithForm: React.FC<SectionWithFormProps> = ({
       {hasImage && (
         <Image src={ positiveLogo } alt="Trybe Futebol Clube Negative Logo"/>
       )}
-      <form onSubmit={formHook.handleSubmit(onSubmit)}>
+      <form className={classNameForm} onSubmit={formHook.handleSubmit(onSubmit)}>
         {childrenWithProps}
       </form>
     </Section>
