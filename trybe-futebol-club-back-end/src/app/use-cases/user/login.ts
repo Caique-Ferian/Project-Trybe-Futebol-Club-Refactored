@@ -8,10 +8,11 @@ export class Login {
   constructor(private userRepository: UserRepository) {}
 
   public async execute(request: LoginRequest): Promise<LoginResponse> {
-    const login = await this.userRepository.findOne(request.email);
-    if (!login || login.password !== request.password) {
+    const { email, password } = request;
+    const login = await this.userRepository.findOne(email);
+    if (!login || login.password !== password) {
       throw new NotFound('Incorrect email or password');
     }
-    return { token: login.email };
+    return { user: login };
   }
 }

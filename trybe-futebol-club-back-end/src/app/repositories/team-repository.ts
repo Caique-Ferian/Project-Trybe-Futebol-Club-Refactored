@@ -1,6 +1,6 @@
-import Team from '@app/entities/team/team';
+import { Team } from '@app/entities/team/team';
 
-export default abstract class TeamRepository {
+export abstract class TeamRepository {
   abstract findAll(): Promise<Team[]>;
   abstract findByPk(id: string): Promise<Team | null>;
 }

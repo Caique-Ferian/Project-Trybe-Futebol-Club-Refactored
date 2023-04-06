@@ -1,6 +1,6 @@
 import { UserProps } from '@app/entities/types';
 
-export default class User {
+export class User {
   private props: UserProps;
 
   constructor(props: UserProps) {

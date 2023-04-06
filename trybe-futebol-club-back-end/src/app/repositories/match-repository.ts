@@ -1,7 +1,7 @@
-import Match from '@app/entities/match/match';
+import { Match } from '@app/entities/match/match';
 import { MatchProps } from '@app/entities/types';
 
-export default abstract class MatchRepository {
+export abstract class MatchRepository {
   abstract findAll(): Promise<Match[]>;
   abstract create(match: MatchProps): Promise<Match | null>;
   abstract updateGameScore(

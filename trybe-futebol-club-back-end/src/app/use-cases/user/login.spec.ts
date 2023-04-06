@@ -10,7 +10,9 @@ describe('Login', () => {
       email: 'admin@admin.com',
       password: 'secret_admin',
     });
-    expect(successfullyLogin.token).toEqual(inMemoryRepository.users[0].email);
+    expect(successfullyLogin.user.email).toEqual(
+      inMemoryRepository.users[0].email,
+    );
   });
   it('should not be able to login with an incorrect user password', async () => {
     expect(() =>

@@ -1,4 +1,4 @@
-import Match from './match';
+import { Match } from './match';
 
 describe('Match', () => {
   it('should be able to create a match', () => {
