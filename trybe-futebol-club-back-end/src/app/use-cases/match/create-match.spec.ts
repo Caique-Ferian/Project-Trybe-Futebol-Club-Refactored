@@ -12,9 +12,9 @@ describe('CreateMatch', () => {
       awayTeam: 'Palmeiras',
       awayTeamGoals: 1,
     });
-    const allMatchs = await inMemoryRepository.findAll();
-    expect(allMatchs).toHaveLength(2);
-    expect(match.id).toEqual(allMatchs[1].id);
+    const allMatches = await inMemoryRepository.findAll();
+    expect(allMatches).toHaveLength(2);
+    expect(match.id).toEqual(allMatches[1].id);
   });
   it('should not be able to create a match with equal homeTeam and awayTeam', async () => {
     expect(() =>
