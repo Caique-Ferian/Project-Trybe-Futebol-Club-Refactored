@@ -1,4 +1,4 @@
-import { TeamProps } from '../types';
+import { TeamProps } from '@app/entities/types';
 
 export default class Team {
   private props: TeamProps;

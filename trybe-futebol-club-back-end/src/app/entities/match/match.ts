@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
-import { Replace } from '../helper/replace';
-import { MatchProps } from '../types';
+import { Replace } from '@app/entities/helper/replace';
+import { MatchProps } from '@app/entities/types';
 
 export default class Match {
   private props: Replace<MatchProps, { inProgress: boolean }>;

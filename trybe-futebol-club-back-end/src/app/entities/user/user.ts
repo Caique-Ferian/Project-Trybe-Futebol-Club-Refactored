@@ -1,4 +1,4 @@
-import { UserProps } from '../types';
+import { UserProps } from '@app/entities/types';
 
 export default class User {
   private props: UserProps;
