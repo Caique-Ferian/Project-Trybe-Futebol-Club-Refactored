@@ -1,15 +1,11 @@
 import { randomUUID } from 'crypto';
-import { Replace } from '@app/entities/helper/replace';
 import { MatchProps } from '@app/entities/types';
 
 export class Match {
-  private props: Replace<MatchProps, { inProgress: boolean }>;
+  private props: MatchProps;
   private _id: string;
 
-  constructor(
-    props: Replace<MatchProps, { inProgress: boolean }>,
-    id?: string,
-  ) {
+  constructor(props: MatchProps, id?: string) {
     this.props = props;
     this._id = id ?? randomUUID();
   }

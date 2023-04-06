@@ -1,7 +1,9 @@
 import { FindTeamByPkRequest, FindTeamByPkResponse } from './types';
 import { TeamRepository } from '@app/repositories/team-repository';
 import { NotFound } from '@app/use-cases/errors/not-found-error';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class FindTeamByPk {
   constructor(private teamRepository: TeamRepository) {}
 

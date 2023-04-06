@@ -14,4 +14,5 @@ export interface MatchProps {
   homeTeamGoals: number;
   awayTeam: string;
   awayTeamGoals: number;
+  inProgress: boolean;
 }
